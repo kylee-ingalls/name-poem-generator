@@ -4,49 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
     <title>AI Poem Generator</title>
   </head>
   <body>
-    <header>
-      <h1>AI Name Poem Generator</h1>
-    </header>
+    <div class="container">
+      <header>
+        <h1>AI Name Poem Generator</h1>
+      </header>
 
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="Enter a name"
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-      <div>
-        The poem will appear here
-        <br />
-        It will be multiple lines long,
-        <br />
-        and it will be a poem about the name you entered.
-      </div>
-    </main>
-    <footer>
-      This AI project was coded by
-      <a href="https://www.linkedin.com/in/kylee-ingalls/" target="_blank"
-        >Kylee Ingalls</a
-      >
-      and is<a
-        href="https://github.com/kylee-ingalls/name-poem-generator"
-        target="_blank"
-      >
-        open-sourced on GitHub</a
-      >
-      and is
-      <a href="https://name-poem-generator.netlify.app/" target="_blank"
-        >hosted on Netlify.</a
-      >
-    </footer>
-
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter a name"
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="poem">
+          The poem will appear here
+          <br />
+          It will be multiple lines long,
+          <br />
+          and it will be a poem about the name you entered.
+        </div>
+      </main>
+      <footer>
+        This AI project was coded by
+        <a href="https://www.linkedin.com/in/kylee-ingalls/" target="_blank"
+          >Kylee Ingalls</a
+        >
+        and is<a
+          href="https://github.com/kylee-ingalls/name-poem-generator"
+          target="_blank"
+        >
+          open-sourced on GitHub</a
+        >
+        and is
+        <a href="https://name-poem-generator.netlify.app/" target="_blank"
+          >hosted on Netlify.</a
+        >
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
