@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>AI Poem Generator</title>
   </head>
   <body>
@@ -19,7 +20,7 @@
       </header>
 
       <main>
-        <form>
+        <form id="poem-generator-form">
           <input
             type="text"
             placeholder="Enter a name"
@@ -30,13 +31,7 @@
           />
           <input type="submit" class="submit-button" />
         </form>
-        <div class="poem">
-          The poem will appear here
-          <br />
-          It will be multiple lines long,
-          <br />
-          and it will be a poem about the name you entered.
-        </div>
+        <div class="poem" id="poem"></div>
       </main>
       <footer>
         This AI project was coded by
