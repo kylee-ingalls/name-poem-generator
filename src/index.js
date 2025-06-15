@@ -1,13 +1,29 @@
 function generatePoem(event) {
   event.preventDefault();
 
-  new Typewriter("#poem", {
-    strings:
-      "A name is given, a name is earned, Through every lesson we have learned. It marks our place, both near and far— A quiet guide to who we are. It may be common, bold, or rare—But every name is made with care.",
-    autoStart: true,
-    delay: 1,
-    cursor: "",
-  });
+  let instructionsInput = document.querySelector("#user-instructions");
+  let prompt = `User instructions are: Generate a poem about ${instructionsInput.value}`;
+  let context =
+    "You are a poet who writes short, creative poems about a person's name that rhyme. Each poem is approximately 4-6 lines, and separate each line with a <br />. Make sure to follow the user instructions.";
+  let apiKey = "cb60bbeo7bd602d062ff8d664eta0043";
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
+    prompt
+  )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+
+  console.log("Generating poem");
+  console.log(`prompt: ${prompt}`);
+  console.log(`context: ${context}`);
+
+  function displayPoem(response) {
+    new Typewriter("#poem", {
+      strings: response.data.answer,
+      autoStart: true,
+      delay: 1,
+      cursor: "",
+    });
+  }
+
+  axios.get(apiURL).then(displayPoem);
 }
 
 let poemFormElement = document.querySelector("#poem-generator-form");
