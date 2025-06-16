@@ -10,6 +10,10 @@ function generatePoem(event) {
     prompt
   )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
+  let poemElement = document.querySelector("#poem");
+  poemElement.classList.remove("hidden");
+  poemElement.innerHTML = `⏳ Generating your poem about ${instructionsInput.value}...`;
+
   console.log("Generating poem");
   console.log(`prompt: ${prompt}`);
   console.log(`context: ${context}`);
